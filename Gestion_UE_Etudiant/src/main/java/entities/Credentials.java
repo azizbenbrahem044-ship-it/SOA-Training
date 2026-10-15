@@ -1,12 +1,20 @@
 package entities;
 
-
 import java.io.Serializable;
 
 public class Credentials implements Serializable {
 
     private String username;
     private String password;
+
+    // Constructeur sans arguments obligatoire pour la désérialisation JSON
+    public Credentials() {
+    }
+
+    public Credentials(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;
@@ -23,6 +31,4 @@ public class Credentials implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
-
