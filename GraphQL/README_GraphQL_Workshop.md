@@ -103,8 +103,8 @@ You are required to:
 
 1. **Analyze** the existing entities and business logic.  
 2. **Create GraphQL resolvers**:  
-   - `QueryResolver` for read operations  
-   - `MutationResolver` for write operations  
+   - `Query` for read operations  
+   - `Mutation` for write operations  
 3. **Define the GraphQL schema** (`schema.graphqls`).  
 4. **Configure the GraphQL server** within Spring Boot.  
 5. **Test** queries and mutations using Postman or GraphiQL.  

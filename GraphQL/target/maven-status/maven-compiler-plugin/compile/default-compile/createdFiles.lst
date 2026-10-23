@@ -1,0 +1,9 @@
+business\UniteEnseignementBusiness.class
+entities\Module$TypeModule.class
+graphql\Mutation.class
+graphql\GraphQLEndPoint.class
+entities\TypeModule.class
+business\ModuleBusiness.class
+entities\UniteEnseignement.class
+entities\Module.class
+graphql\Query.class

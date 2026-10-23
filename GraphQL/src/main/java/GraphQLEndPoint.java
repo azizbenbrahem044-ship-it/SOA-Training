@@ -1,7 +1,6 @@
-import com.coxautodev.graphql.tools.GraphQLResolver;
+package graphql;
+
 import com.coxautodev.graphql.tools.SchemaParser;
-import graphql.MutationResolver;
-import graphql.QueryResolver;
 import graphql.schema.GraphQLSchema;
 import graphql.servlet.SimpleGraphQLServlet;
 
@@ -15,12 +14,15 @@ public class GraphQLEndPoint extends SimpleGraphQLServlet {
     }
 
     private static GraphQLSchema buildSchema() {
-        return SchemaParser.newParser()
-               .file("schema.graphql")
-               .resolvers(new QueryResolver(), new MutationResolver())
-               .build()
-               .makeExecutableSchema();
-
+        try {
+            return SchemaParser.newParser()
+                    .file("schema.graphql")
+                    .resolvers(new Query(), new Mutation())
+                    .build()
+                    .makeExecutableSchema();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erreur critique lors de la construction du schéma GraphQL : " + e.getMessage(), e);
+        }
     }
-
 }
